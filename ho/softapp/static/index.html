@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Saffron House</title>
+<style>
+  /* Reset some default styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333333;
+    line-height: 1.6;
+  }
+
+  /* Banner / Header */
+ 
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  }
+  header p {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  }
+
+  /* Navigation */
+  nav {
+    background-color: #4A90E2;
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+  }
+  nav ul li {
+    margin: 0 15px;
+  }
+  nav ul li a {
+    display: block;
+    padding: 15px 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  nav ul li a:hover, nav ul li a.active {
+    background-color: #FF6F61;
+    border-radius: 4px;
+  }
+
+  /* Main content container */
+  main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  /* Menu page */
+  .menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+  }
+  .menu-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .menu-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    height: 150px;
+    object-fit: cover;
+  }
+  .menu-item h3 {
+    margin: 10px 0 5px;
+  }
+  .menu-item p {
+    color: #666;
+    font-size: 0.9em;
+  }
+
+  /* Administration page */
+  .admin-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  .admin-person {
+    background: white;
+    border-radius: 8px;
+    width: 180px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 15px;
+  }
+  .admin-person img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .admin-person h4 {
+    margin-bottom: 5px;
+  }
+  .admin-person p {
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  /* Contact Us page */
+  .contact-info {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 1.1em;
+  }
+  .contact-info p {
+    margin: 15px 0;
+  }
+  .contact-info strong {
+    color: #4A90E2;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    margin-top: 60px;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+    }
+    nav ul li {
+      margin: 5px 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Safrron House</h1>
+  <p>Fresh & Tasty Food Served Daily</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#home" class="active" onclick="showSection('home', this)">Home</a></li>
+    <li><a href="#menu" onclick="showSection('menu', this)">Menu</a></li>
+    <li><a href="#admin" onclick="showSection('admin', this)">Administration</a></li>
+    <li><a href="#contact" onclick="showSection('contact', this)">Contact Us</a></li>
+  </ul>
+</nav>
+
+<main>
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Welcome to Saffron House!</h2>
+    <p>We offer the best and freshest food in town. Our chefs use only the finest ingredients to prepare your meals with love and care. Come visit us and taste the difference!</p>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" style="display:none;">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="briyani.jpeg.png" alt="Saffron Briyani" />
+        <h3>Saffron Briyani</h3>
+        <p>Classic delight with saffron.</p>
+      </div>
+      <div class="menu-item">
+        <img src="ice.jpeg.png" alt="Icecream" />
+        <h3>Saffron Icecream</h3>
+        <p>A good flavorful delight.</p>
+      </div>
+      <div class="menu-item">
+        <img src="parrota.jpeg.png" alt="Parotta with saffron curry" />
+        <h3>Parotta with saffron curry</h3>
+        <p>Creamy saffron curry and puffy bun parotta.</p>
+      </div>
+      <div class="menu-item">
+        <img src="rice.png" alt="Saffron rice" />
+        <h3>Saffron rice</h3>
+        <p>Crisp nuts, baked rice and creamy dressing.</p>
+      </div>
+      <div class="menu-item">
+        <img src="lassi.png" alt="Saffron lassi" />
+        <h3>Saffron lassi</h3>
+        <p>Cold and creamy lassi.</p>
+      </div>
+      <div class="menu-item">
+        <img src="shrimp.png" alt="Saffron Shrimp" />
+        <h3>Saffron Shrimp</h3>
+        <p>Delightful and good saffron shrimp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Administration Section -->
+  <section id="admin" style="display:none;">
+    <h2>Administration Team</h2>
+    <div class="admin-list">
+      <div class="admin-person">
+        <img src="branch.png" alt="Branch" />
+        <h4>Branch</h4>
+        <p>General Manager</p>
+      </div>
+      <div class="admin-person">
+        <img src="dory.png" alt="Dory" />
+        <h4>Dory</h4>
+        <p>Head Chef</p>
+      </div>
+      <div class="admin-person">
+        <img src="judy.png" alt="Judy" />
+        <h4>Judy</h4>
+        <p>Operations Manager</p>
+      </div>
+      <div class="admin-person">
+        <img src="marlin.png" alt="Marlin" />
+        <h4>Marlin</h4>
+        <p>Marketing Head</p>
+      </div>
+      <div class="admin-person">
+        <img src="nick.png" alt="Nick" />
+        <h4>Nick</h4>
+        <p>Finance Manager</p>
+      </div>
+      <div class="admin-person">
+        <img src="poppy.png" alt="Poppy" />
+        <h4>Poppy</h4>
+        <p>Customer Service</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" style="display:none;">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Address:</strong> 123 Foodie Lane, Flavor Town, FT 45678</p>
+      <p><strong>Phone:</strong> 1234567890</p>
+      <p><strong>Email:</strong> saffronhouse.com</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Created by V.Harshini</p>
+</footer>
+
+<script>
+  // Function to show/hide sections on menu click
+  function showSection(id, elem) {
+    // Hide all sections
+    const sections = document.querySelectorAll('main > section');
+    sections.forEach(section => {
+      section.style.display = 'none';
+    });
+
+    // Show the chosen section
+    document.getElementById(id).style.display = 'block';
+
+    // Remove active class from all nav links
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Add active class to clicked link
+    elem.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
